@@ -1,27 +1,28 @@
 # Chess Game
  
- > Authors: [Sean Yi](https://github.com/syi012) [Alex Ramos](https://github.com/RamosAlexCS) [David Ahn](https://github.com/dahn013) [Daniel Alcoff](https://github.com/ilkiyani)
+  Authors: [Sean Yi](https://github.com/syi012) [Alex Ramos](https://github.com/RamosAlexCS) [David Ahn](https://github.com/dahn013) [Daniel Alcoff](https://github.com/ilkiyani)
 
 ## Project Description
- > * The reason why we chose Chess is because of its timeless value and popularity. Till this very day Chess continues to thrive and evolve despite starting in the 16th century. 
- > * We plan on implementing the visitor design pattern since we will be performing various operations on similar objects like chess pieces, games, etc.
- > * The project will be created using C++ using source-code editing tools like VSCode and XCode depending on the author.
- > * Once all of the intended features are implemented our chess game is expected to differentiate legal from illegal moves, allow players to undo moves, and load unfinished games. 
- > 
- > ## Phase II
- > In addition to completing the "Class Diagram" section below, you will need to:
- > * Create an "Epic" (note) for each feature. Place these epics in the `Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Break down the "Epics" into smaller actionable user stories (i.e. smaller development tasks). Convert them into issues and assign them to team members. Place these in the `TODO` column.
- >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
- > * Schedule two check-ins using Calendly. You need to pick both time slots during your lab on week 6. Your entire team must be present for both check-ins.
- >   * The first check-in needs to be scheduled with your lab TA. During that meeting, you will discuss your project design/class diagram from phase II.
- >   * The second check-in should be scheduled with a reader. During that meeting you will discuss:
- >     * The tasks you are planning for the first sprint
- >     * How work will be divided between the team members
+  * The reason why we chose Chess is because of its timeless value and popularity. Till this very day Chess continues to thrive and evolve despite starting in the 16th century. 
+  * We plan on implementing the visitor design pattern since we will be performing various operations on similar objects like chess pieces, games, etc.
+  * The program will prompt the user to input commands such as move, undo, new game, and quit. The output will be a chessboard using characters to signify squares and borders for the x and y axis. The output should also print the pieces in the correct locations.
+  * The project will be created using C++ using source-code editing tools like VSCode and XCode depending on the author.
+  * Once all of the intended features are implemented our chess game is expected to differentiate legal from illegal moves, allow players to undo moves, and load unfinished games. 
+  
+  ## Phase II
+  In addition to completing the "Class Diagram" section below, you will need to:
+  * Create an "Epic" (note) for each feature. Place these epics in the `Backlog` column
+  * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
+    * Break down the "Epics" into smaller actionable user stories (i.e. smaller development tasks). Convert them into issues and assign them to team members. Place these in the `TODO` column.
+    * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
+  * Schedule two check-ins using Calendly. You need to pick both time slots during your lab on week 6. Your entire team must be present for both check-ins.
+    * The first check-in needs to be scheduled with your lab TA. During that meeting, you will discuss your project design/class diagram from phase II.
+    * The second check-in should be scheduled with a reader. During that meeting you will discuss:
+      * The tasks you are planning for the first sprint
+      * How work will be divided between the team members
 
 ## Class Diagram
- > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+  Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
