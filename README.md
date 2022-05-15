@@ -12,6 +12,9 @@
 ## Class Diagram
   [Chess UML Class Diagram](https://drive.google.com/file/d/1Szcj0UyhY4KbvHp5DhjzDviRplMPprnY/view?usp=sharing)
 
+## Class Diagram
+  [Updated Chess UML Class Diagram](https://docs.google.com/file/d/1GEduaBfRixYrOmtP3e-OghWE-VfhyVZqRi6r15xAZ2M/view)
+
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
  > * Before the meeting you should perform a sprint plan like you did in Phase II.
