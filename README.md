@@ -4,7 +4,7 @@
 
 ## Project Description
   * The reason why we chose Chess is because of its timeless value and popularity. Till this very day Chess continues to thrive and evolve despite starting in the 16th century. 
-  * We plan on implementing the visitor design pattern since we will be performing various operations on similar objects like chess pieces, games, etc.
+  * We plan on implementing both the composite and strategy design patterns in this game. The reason we chose composite is because each object on the board will be treated as a Piece class but they are all partitioned into 6 subclasses (Pawn, Bishop, Knight, etc...). We also chose the strategy design pattern because each Piece requires a different algorithm to move across the board so the move function should prompt a specific "strategy" based on the Piece that is selected.
   * The program will prompt the user to input commands such as move, undo, new game, and quit. The output will be a chessboard using characters to signify squares and borders for the x and y axis. The output should also print the pieces in the correct locations.
   * The project will be created using C++ using source-code editing tools like VSCode and XCode depending on the author.
   * Once all of the intended features are implemented our chess game is expected to differentiate legal from illegal moves, allow players to undo moves, and load unfinished games. 
