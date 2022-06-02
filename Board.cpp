@@ -8,16 +8,16 @@ Board::Board() {
 }
 
 Board::Board(string b) {
-	//name = b;
-	//populate();
+	name = b;
+	populate();
 	board[row][column] = b;
 }
 void Board::menu() {
     char input = 0;
     while (input != 'q' && gameOver == false) {
-        outputGame();
+        printBoard();
 	    std::cout << "Currently " << getPlayer() << "'s turn..." << std::endl
-	    << "Enter input: "; //MENU OPTIONS: (m)ove, (u)ndo, (s)ave, (l)oad, (n)ew game, (q)quit
+	    << "Enter input: "; //MENU OPTIONS: (m)ove, (s)ave, (l)oad, (n)ew game, (q)quit
 	    std::cin >> input;
             std::cout << std::endl;
 	    if (input == 'm') {
@@ -53,6 +53,12 @@ void Board::menu() {
 		std::cout << "Invalid input, try again" << std::endl;
 	    }
     }
+}
+void Board::move(int a, int b, int x, int y) { // a = row , b = column because of array access remember to flip it for function calls //
+	// NEED TO IMPLEMENT //
+}
+void Board::blocked(int a, int b, int x, int y) {
+// NEED TO IMPLEMENT, ITERATES THROUGH BOARD TO CHECK IF EACH SQUARE IN PATH IS NULLPTR OR NOT //
 }
 string Board::getPlayer() {
     if (turn == 0) {
@@ -91,4 +97,26 @@ void Board::updateBoard() {
 			//}
 		}
 	}
+}
+void Board::save() {
+    std::string fname;
+    fname = (name += ".txt");
+    std::ofstream file;
+    file.open(fname);
+    file << moves;
+    file.close();
+    std::cout << "GAME SAVED AS " << fname << std::endl;
+}
+void Board::load() {
+    std::cout << "1. Copy contents of desired game inside .txt file\n2. Prompt newGame()\n3. Rename game identical to file without .txt\n4. Paste contents into command line" << std::endl;
+
+}
+void Board::newGame() {
+// NEED TO IMPLEMENT // CALLS emptyBoard() PROMPTS NAME FOR GAME, SET name = newName, CALL populate() //
+}
+void Board::emptyBoard() {
+// NEED TO IMPLEMENT // Iterates through board deleting each square and setting them to nullptr //
+}
+void Board::populate() {
+// NEED TO IMPLEMENT // Iterates through [8][8] creating new pieces ex. board[0][0] (top left corner) = new Rook("black", 0, 0) //
 }

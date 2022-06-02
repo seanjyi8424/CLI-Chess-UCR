@@ -10,6 +10,7 @@ int main() {
     getline(cin, name);
     Board game(name);
     game.menu();
+    game.emptyBoard();
 
     return 0;
 }
