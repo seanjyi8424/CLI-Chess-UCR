@@ -307,3 +307,4 @@ class King : public Piece{
         return false;
     }
 };
+#endif

@@ -1,5 +1,5 @@
-#include "board.cpp"
-#include "board.h"
+#include "Board.cpp"
+#include "Board.h"
 //more libraries/
 
 int main() {
