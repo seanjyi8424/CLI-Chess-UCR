@@ -7,13 +7,13 @@ using namespace std;
 
 class Board {
 private:
-    Piece* board[8][8];
     bool gameOver = false;
     string name;
     string moves; //string used to store moves for save function//
     int turn = 0;
 
 public:
+    Piece* board[8][8];
     Board(string);
     void menu();
     void printBoard();
