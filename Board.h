@@ -1,14 +1,12 @@
 #ifndef BOARD_H
 #define BOARD_H
 #include <iostream>
-#include <piece.hpp>
+#include "piece.hpp"
 #include <fstream>
 using namespace std;
 
 class Board {
 private:
-    int row;
-    int column;
     Piece* board[8][8];
     bool gameOver = false;
     string name;
@@ -16,7 +14,6 @@ private:
     int turn = 0;
 
 public:
-    Board();
     Board(string);
     void menu();
     void printBoard();

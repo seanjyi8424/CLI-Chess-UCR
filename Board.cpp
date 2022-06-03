@@ -2,15 +2,9 @@
 #include <iostream>
 using namespace std;
 
-Board::Board() {
-	this->row = 8;
-	this->column = 8;
-}
-
 Board::Board(string b) {
 	name = b;
 	populate();
-	board[row][column] = b;
 }
 void Board::menu() {
     char input = 0;
@@ -67,18 +61,26 @@ string Board::getPlayer() {
     return "black";
 }
 void Board::emptyBoard() {
-	board[row][column];
-	for (int i = 0; i < row; i++) {
-		for (int j = 0; j < column; j++) {
-			board[i][j] = "-";
+	// NEED TO IMPLEMENT // Iterates through board deleting each square and setting them to nullptr //
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 8; j++) {
+			delete board[i][j];
+			board[i][j] = nullptr;
 		}
 	}
 }
 
 void Board::printBoard() {
-	for (int i = 0; i < row; i++) {
-		for (int j = 0; j < column; j++) {
-			cout << board[i][j] << "   ";
+	cout << "[" << name << "]\n";
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 8; j++) {
+			if (board[i][j] != nullptr) { //will be used to see if there is a piece in this position, if so, save piece, else, save "-"
+				cout << board[i][j]->getPiece();
+			}
+			else {
+				cout << "-";
+			}
+			cout << "   ";
 		}
 		cout << i + 1 << "\n\n";
 	}
@@ -86,18 +88,6 @@ void Board::printBoard() {
 	cout << "A   B   C   D   E   F   G   H\n";
 }
 
-void Board::updateBoard() {
-	for (int i = 0; i < row; i++) {
-		for (int j = 0; j < column; j++) {
-			//if () { //will be used to see if there is a piece in this position, if so, save piece, else, save "-"
-			//
-			//}
-			//else {
-			//	board[i][j] = "-";
-			//}
-		}
-	}
-}
 void Board::save() {
     std::string fname;
     fname = (name += ".txt");
@@ -113,10 +103,15 @@ void Board::load() {
 }
 void Board::newGame() {
 // NEED TO IMPLEMENT // CALLS emptyBoard() PROMPTS NAME FOR GAME, SET name = newName, CALL populate() //
+	string newGame;
+	emptyBoard();
+	cout << "Enter a name for your game\n";
+	cin.ignore();
+	getline(cin, newGame);
+	name = newGame;
+	populate();
 }
-void Board::emptyBoard() {
-// NEED TO IMPLEMENT // Iterates through board deleting each square and setting them to nullptr //
-}
+
 void Board::populate() {
 	board[0][0]=new Rook("black",0,0);
 	board[0][1]=new Knight("black",0,1);
