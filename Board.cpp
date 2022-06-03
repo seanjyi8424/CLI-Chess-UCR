@@ -55,7 +55,15 @@ void Board::menu() {
     }
 }
 void Board::move(int a, int b, int x, int y) { // a = row , b = column because of array access remember to flip it for function calls //
-	// NEED TO IMPLEMENT //
+	if(board[a][b]==nullptr){
+		return;
+	}
+	board[x][y]=board[a][b];
+	delete board[a][b];
+	turn=turn+1;
+	if(turn>1){
+		turn=0;
+	}
 }
 void Board::blocked(int a, int b, int x, int y) {
 // NEED TO IMPLEMENT, ITERATES THROUGH BOARD TO CHECK IF EACH SQUARE IN PATH IS NULLPTR OR NOT //
