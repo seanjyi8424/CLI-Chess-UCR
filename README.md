@@ -16,10 +16,10 @@
   [Updated Chess UML Class Diagram](https://docs.google.com/file/d/1GEduaBfRixYrOmtP3e-OghWE-VfhyVZqRi6r15xAZ2M/view)
  
 ## Class Diagram 3
-  [Final Chess UML Class Diagram] (https://drive.google.com/file/d/1TP_z2gxI8cquzujQ0ruFNlctSqlXhAnQ/view?usp=sharing)
+  [Final Chess UML Class Diagram](https://drive.google.com/file/d/1TP_z2gxI8cquzujQ0ruFNlctSqlXhAnQ/view?usp=sharing)
 
 ## Screenshots
-  [Google doc screenshots folder] (https://drive.google.com/drive/folders/1NTM0OUHa1Eg8ASEudPd-qO-8RdxXye0V?usp=sharing)
+  [Google doc screenshots folder](https://drive.google.com/drive/folders/1NTM0OUHa1Eg8ASEudPd-qO-8RdxXye0V?usp=sharing)
 
  ## Installation/Usage
   Execution
