@@ -49,15 +49,58 @@ void Board::menu() {
     }
 }
 void Board::move(int a, int b, int x, int y) { // a = row , b = column because of array access remember to flip it for function calls //
-	if(board[a][b]==nullptr){
-		return;
-	}
-	board[x][y]=board[a][b];
-	delete board[a][b];
-	turn=turn+1;
-	if(turn>1){
-		turn=0;
-	}
+    if (board[a][b] == nullptr) {
+        std::cout << "Square selected is empty" << std::endl;
+        return;
+    }
+    if(getPlayer() != board[a][b]->getColor()) 
+    { //base case to prevent players from moving pieces that aren't their color//
+        std::cout << "NOT YOUR COLOR TRY AGAIN" << std::endl;
+        return;
+    }
+    else {
+        if (blocked(a, b, x, y) != true) { // Checks to see if path is blocked
+            if (board[a][b]->isValid(board[x][y], x, y) == true) {
+                if (board[x][y] != nullptr) { // Kill action
+                    if (board[x][y]->getPiece() == 'k' || board[x][y]->getPiece() == 'K') {
+                        gameOver = true;
+                        std::cout << getPlayer() << " player has killed opponent's King, game over" << std::endl;
+
+                    }
+                    delete board[x][y];
+                    board[x][y] = nullptr;
+                    board[x][y] = board[a][b];
+                    board[a][b] = nullptr;
+                    if (turn == 0) {
+                        ++turn;
+                    }
+                    else {
+                        --turn;
+                    }
+                    moves += 'm';
+                    moves += char(b + 97);
+                    moves += abs(a - 8) + 48;
+                    moves += char(y + 97);
+                    moves += abs(x - 8) + 48;
+                }
+                else {
+                    board[x][y] = board[a][b];
+                    board[a][b] = nullptr;
+                    if (turn == 0) {
+                        ++turn;
+                    }
+                    else {
+                        --turn;
+                    }
+                    moves += 'm';
+                    moves += char(b + 97);
+                    moves += abs(a - 8) + 48;
+                    moves += char(y + 97);
+                    moves += abs(x - 8) + 48;
+                }
+            }
+        }
+    }
 }
 void Board::blocked(int a, int b, int x, int y) {
 // NEED TO IMPLEMENT, ITERATES THROUGH BOARD TO CHECK IF EACH SQUARE IN PATH IS NULLPTR OR NOT //
