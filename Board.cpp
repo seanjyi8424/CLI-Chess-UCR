@@ -41,6 +41,7 @@ void Board::menu() {
 		newGame();
 	    }
 	    else if (input == 'q') { //Added this statement because pressing q results in error message and then closes the loop//
+	        emptyBoard();
 		std::cout << "Game has ended, goodbye" << std::endl;
 	    }
 	    else { //encourages users to use lower case inputs, upper case will not be recognized// 
@@ -65,7 +66,6 @@ void Board::move(int a, int b, int x, int y) { // a = row , b = column because o
                     if (board[x][y]->getPiece() == 'k' || board[x][y]->getPiece() == 'K') {
                         gameOver = true;
                         std::cout << getPlayer() << " player has killed opponent's King, game over" << std::endl;
-
                     }
                     delete board[x][y];
                     board[x][y] = nullptr;
@@ -102,7 +102,7 @@ void Board::move(int a, int b, int x, int y) { // a = row , b = column because o
         }
     }
 }
-void Board::blocked(int a, int b, int x, int y) {
+bool Board::blocked(int a, int b, int x, int y) {
 // NEED TO IMPLEMENT, ITERATES THROUGH BOARD TO CHECK IF EACH SQUARE IN PATH IS NULLPTR OR NOT //
 }
 string Board::getPlayer() {
@@ -122,6 +122,7 @@ void Board::emptyBoard() {
 }
 
 void Board::printBoard() {
+	int y = 8;
 	cout << "[" << name << "]\n";
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 8; j++) {
@@ -133,7 +134,8 @@ void Board::printBoard() {
 			}
 			cout << "   ";
 		}
-		cout << i + 1 << "\n\n";
+		cout << y << "\n\n";
+		--y;
 	}
 
 	cout << "A   B   C   D   E   F   G   H\n";
