@@ -11,6 +11,7 @@ void Board::menu() {
     while (input != 'q' && gameOver == false) {
         printBoard();
 	    std::cout << "Currently " << getPlayer() << "'s turn..." << std::endl
+        << "MENU OPTIONS: (m)ove, (s)ave, (l)oad, (n)ew game, (q)quit" << std::endl
 	    << "Enter input: "; //MENU OPTIONS: (m)ove, (s)ave, (l)oad, (n)ew game, (q)quit
 	    std::cin >> input;
             std::cout << std::endl;
