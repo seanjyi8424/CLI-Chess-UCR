@@ -1,0 +1,6 @@
+MakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+test
+play
