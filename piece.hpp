@@ -108,9 +108,45 @@ class Pawn : public Piece {
 };
 
 class Rook : public Piece  {
-	public:
-        bool isBlack();
-	    static std::string moveRook(int);
+	private:
+    int cpX = -1;
+    int cpY = -1;
+    std::string color;
+
+    public:
+    Rook(std::string c, int x, int y) {
+        cpX = y;
+        cpY = x;
+        color = c;
+    }
+    std::string getColor() {
+        return color;
+    }
+    char getPiece() {
+        if (color == "black") {
+            return 'r';
+        }
+        else {
+            return 'R';
+        }
+    }
+    bool viable(int x , int y) {
+        if (cpX == x && cpY == y) { // Base case if piece doesn't move
+            std::cout << "Didn't move..." << std::endl;
+            return false;
+        }
+        else if (cpX == x && abs(cpY - y) != y) { // Checks for vertical  movement;
+            cpX = x;
+            cpY = y;
+            return true;
+        }
+        else if (abs(cpX - x) != x && cpY == y) { // Checks for horizontal movement;
+            cpX = x;
+            cpY = y;
+            return true;
+        }
+        return false;
+    }
 };
 
 class Bishop : public Piece{
@@ -188,13 +224,86 @@ class Knight : public Piece{
 };
 
 class Queen : public Piece{
+    private:
+    int cpX = -1;
+    int cpY = -1;
+    std::string color;
+
     public:
-        bool isBlack();
-	    static std::string moveQueen(int);
+    Queen(std::string c, int x, int y) {
+        cpX = y;
+        cpY = x;
+        color = c;
+    }
+    std::string getColor() {
+        return color;
+    }
+    char getPiece() {
+        if (color == "black") {
+            return 'q';
+        }
+        else {
+            return 'Q';
+        }
+    }
+    bool viable(int x , int y) {
+        if (cpX == x && cpY == y) { // Base case if piece doesn't move
+            std::cout << "Didn't move..." << std::endl;
+            return false;
+        }
+        else if (cpX == x && abs(cpY - y) != y) { // Checks for vertical  movement;
+            cpX = x;
+            cpY = y;
+            return true;
+        }
+        else if (abs(cpX - x) != x && cpY == y) { // Checks for horizontal movement;
+            cpX = x;
+            cpY = y;
+            return true;
+        }
+        else if (abs(cpX - x) == abs(cpY - y)) { // Checks for diagonal movement;
+            cpX = x;
+            cpY = y;
+            return true;
+        }
+        return false;
+    }
 };
 
+
 class King : public Piece{
+    private:
+    int cpX = -1;
+    int cpY = -1;
+    std::string color;
+
     public:
-        bool isBlack();
-	    static std::string moveKing(int);
+    King(std::string c, int x, int y) {
+        cpX = y;
+        cpY = x;
+        color = c;
+    }
+    std::string getColor() {
+        return color;
+    }
+    char getPiece() {
+        if (color == "black") {
+            return 'k';
+        }
+        else {
+            return 'K';
+        }
+    }
+    bool viable(int x , int y) {
+        if (cpX == x && cpY == y) { // Base case if piece doesn't move
+            std::cout << "Didn't move..." << std::endl;
+            return false;
+        }
+        else if (abs(cpX - x) <= 1 && abs(cpY - y) <= 1) { // Checks for all movements of 1 space;
+            cpX = x;
+            cpY = y;
+            return true;
+        }
+        return false;
+    }
 };
