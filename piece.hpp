@@ -12,6 +12,7 @@ class Piece {
     std::string type;
     std::string color;
     public:
+    virtual ~Piece() = default;
     Piece() { }
     virtual char getPiece() = 0;
     virtual bool viable(int x, int y) = 0;
