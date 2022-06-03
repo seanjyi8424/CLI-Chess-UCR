@@ -27,6 +27,7 @@
   2. cmake3 .
   3. make
   4. ./play
+  
   Playing
   * You can input multiple inputs in one if it is appropriate aka md2d4 (moves d2 to d4).
   * Saving creates a file of these multiple inputs with the game name as the file name.
