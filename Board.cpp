@@ -41,7 +41,6 @@ void Board::menu() {
 		newGame();
 	    }
 	    else if (input == 'q') { //Added this statement because pressing q results in error message and then closes the loop//
-	        emptyBoard();
 		std::cout << "Game has ended, goodbye" << std::endl;
 	    }
 	    else { //encourages users to use lower case inputs, upper case will not be recognized// 
@@ -66,6 +65,7 @@ void Board::move(int a, int b, int x, int y) { // a = row , b = column because o
                     if (board[x][y]->getPiece() == 'k' || board[x][y]->getPiece() == 'K') {
                         gameOver = true;
                         std::cout << getPlayer() << " player has killed opponent's King, game over" << std::endl;
+
                     }
                     delete board[x][y];
                     board[x][y] = nullptr;
@@ -102,9 +102,93 @@ void Board::move(int a, int b, int x, int y) { // a = row , b = column because o
         }
     }
 }
-bool Board::blocked(int a, int b, int x, int y) {
-// NEED TO IMPLEMENT, ITERATES THROUGH BOARD TO CHECK IF EACH SQUARE IN PATH IS NULLPTR OR NOT //
+bool Board::blocked(int a, int b, int x, int y) { // checks throughout the board to see if there are pieces blocking the way // ME
+    if (board[a][b]->getPiece() == 'q' || board[a][b]->getPiece() == 'Q') { //queen block
+        if (a == x) { // horizontal
+            for (int i = 1; i < abs(b - y); ++i) {
+                if (board[a][b + i] != nullptr) {
+                    std::cout << "Path blocked" << std::endl;
+                    return true;
+                }
+            }
+            return false;
+        }
+        else if (b == y) { // vertical
+            for (int i = 1; i < abs(a - x); ++i) {
+                if (board[a + i][b] != nullptr) {
+                    std::cout << "Path blocked HELLO" << a+i << std::endl;
+                    return true;
+                }
+            }
+            return false;
+        }
+        else {
+            int h = y > b ? 1 : -1;
+            int v = x > a ? 1 : -1;
+            for (int i = 1; i <= abs(x - a) - 1; ++i) {
+                if (board[a + i * v][b + i * h] != nullptr) {
+                    std::cout << "Path blocked" << std::endl;
+                    return true;
+                }
+            } 
+            return false;
+        }
+        return false;
+    }
+    else if (board[a][b]->getPiece() == 'b'|| board[a][b]->getPiece() == 'B') { // bishop block
+        int h = y > b ? 1 : -1;
+        int v = x > a ? 1 : -1;
+        for (int i = 1; i <= abs(x - a) - 1; ++i) {
+            if (board[a + i * v][b + i * h] != nullptr) {
+                std::cout << "Path blocked" << std::endl;
+                return true;
+            }
+        }
+        return false;
+    }
+    else if (board[a][b]->getPiece() == 'p' || board[a][b]->getPiece() == 'P') { // pawn block
+        if (board[a][b]->getColor() == "black") {
+            for (int i = 1; i <= abs(a - x) - 1; ++i ) {
+                if (board[a + i][y] != nullptr) {
+                    return true;
+                }
+            }
+        }
+        else {
+            for (int i = 1; i < abs(a - x) - 1; ++i ) {
+                if (board[a - i][y] != nullptr) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    else if (board[a][b]->getPiece() == 'k' || board[a][b]->getPiece() == 'K') { // king block
+        // Not needed? Only moves one square and friendly fire already blocks it //
+        return false;
+    }
+    else if (tolower(board[a][b]->getPiece()) == 'r' || board[a][b]->getPiece() == 'R') { // rook block
+        if (a == x) { // horizontal
+            for (int i = 1; i < abs(b - y); ++i) {
+                if (board[a][b + i] != nullptr) {
+                    std::cout << "Path blocked" << std::endl;
+                    return true;
+                }
+            }
+        }
+        else if (b == y) { // vertical
+            for (int i = 1; i < abs(a - x); ++i) {
+                if (board[a + i][b] != nullptr) {
+                    std::cout << "Path blocked" << std::endl;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    return false; // Knights can jump anywhere
 }
+
 string Board::getPlayer() {
     if (turn == 0) {
        return "white";
@@ -122,7 +206,6 @@ void Board::emptyBoard() {
 }
 
 void Board::printBoard() {
-	int y = 8;
 	cout << "[" << name << "]\n";
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 8; j++) {
@@ -134,8 +217,7 @@ void Board::printBoard() {
 			}
 			cout << "   ";
 		}
-		cout << y << "\n\n";
-		--y;
+		cout << i + 1 << "\n\n";
 	}
 
 	cout << "A   B   C   D   E   F   G   H\n";
