@@ -207,6 +207,7 @@ void Board::emptyBoard() {
 }
 
 void Board::printBoard() {
+	int y = 8;
 	cout << "[" << name << "]\n";
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 8; j++) {
@@ -218,9 +219,8 @@ void Board::printBoard() {
 			}
 			cout << "   ";
 		}
-		cout << i + 1 << "\n\n";
+		cout << y-- << "\n\n";
 	}
-
 	cout << "A   B   C   D   E   F   G   H\n";
 }
 
