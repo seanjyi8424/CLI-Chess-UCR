@@ -23,7 +23,7 @@
 
  ## Installation/Usage
   Execution
-  1. Download submodules if not installed with git submdule update --init--recursive
+  1. Download submodules if not installed with git submdule update --init --recursive
   2. cmake3 .
   3. make
   4. ./play
