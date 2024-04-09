@@ -8,18 +8,35 @@
   * The program will prompt the user to input commands such as move, undo, new game, and quit. The output will be a chessboard using characters to signify squares and borders for the x and y axis. The output should also print the pieces in the correct locations.
   * The project will be created using C++ using source-code editing tools like VSCode and XCode depending on the author.
   * Once all of the intended features are implemented our chess game is expected to differentiate legal from illegal moves, allow players to undo moves, and load unfinished games. 
-  
-## Class Diagram 1
-  [Chess UML Class Diagram](https://drive.google.com/file/d/1Szcj0UyhY4KbvHp5DhjzDviRplMPprnY/view?usp=sharing)
-
-## Class Diagram 2
-  [Updated Chess UML Class Diagram](https://docs.google.com/file/d/1GEduaBfRixYrOmtP3e-OghWE-VfhyVZqRi6r15xAZ2M/view)
  
-## Class Diagram 3
-  [Final Chess UML Class Diagram](https://drive.google.com/file/d/1TP_z2gxI8cquzujQ0ruFNlctSqlXhAnQ/view?usp=sharing)
+## Class Diagram
+  ![image](https://github.com/seanjyi8424/CLI-Chess-UCR/assets/108261874/618792a8-babf-453b-8ea6-d0028264abad)
 
 ## Screenshots
-  [Google doc screenshots folder](https://drive.google.com/drive/folders/1NTM0OUHa1Eg8ASEudPd-qO-8RdxXye0V?usp=sharing)
+### Execute Program
+![image](https://github.com/seanjyi8424/CLI-Chess-UCR/assets/108261874/a5010787-054a-4fa8-98f4-fcc0ab996208)
+
+### Save
+![image](https://github.com/seanjyi8424/CLI-Chess-UCR/assets/108261874/00235596-8819-46e2-8a3e-75ee432e7af9)
+
+### Quit
+![image](https://github.com/seanjyi8424/CLI-Chess-UCR/assets/108261874/1cafe28c-8498-41a9-aedc-102ef7714bc9)
+
+### Move
+![image](https://github.com/seanjyi8424/CLI-Chess-UCR/assets/108261874/271674e7-39ad-49f7-a574-ca3b163f8de8)
+
+### Load
+![image](https://github.com/seanjyi8424/CLI-Chess-UCR/assets/108261874/39974a99-c9e9-4571-b510-e7427348c11a)
+
+### Execute Load
+![image](https://github.com/seanjyi8424/CLI-Chess-UCR/assets/108261874/71b31159-76de-4271-90b2-b10cbc27f911)
+
+### Game Over
+![image](https://github.com/seanjyi8424/CLI-Chess-UCR/assets/108261874/29775818-de16-45e1-82fa-fb6cb4ddf9b8)
+
+### Prompt Game Over
+1. Load: me2e4me7e5mg1f3mb8c6md2d4me5d4mf3d4mf8c5mc2c3md8f6md4c6mf6f2me1f2
+2. Move black bishop to F2 or input: mC5F2
 
  ## Installation/Usage
   Execution
