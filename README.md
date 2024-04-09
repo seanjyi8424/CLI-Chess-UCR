@@ -1,6 +1,7 @@
 # CLI-Chess Game
  
   Authors: [Sean Yi](https://github.com/syi012) [Alex Ramos](https://github.com/RamosAlexCS) [David Ahn](https://github.com/dahn013) [Daniel Alcoff](https://github.com/ilkiyani)
+  This repository is updated and maintained by [Sean Yi](https://github.com/syi012) only
 
 ## Project Description
   * The reason why we chose Chess is because of its timeless value and popularity. Till this very day Chess continues to thrive and evolve despite starting in the 16th century. 
