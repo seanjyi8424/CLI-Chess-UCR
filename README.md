@@ -23,10 +23,10 @@
 
  ## Installation/Usage
   Execution
-  1. Download submodules if not installed with git submdule update --init --recursive
-  2. cmake .
-  3. make
-  4. ./play
+  1. ``git submdule update --init --recursive``
+  2. ``cmake .``
+  3. ``make``
+  4. ``./play``
   
   Playing
   * You can input multiple inputs in one if it is appropriate aka md2d4 (moves d2 to d4).
