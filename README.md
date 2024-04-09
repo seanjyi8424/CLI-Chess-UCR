@@ -1,6 +1,7 @@
 # CLI-Chess Game
  
   Authors: [Sean Yi](https://github.com/syi012) [Alex Ramos](https://github.com/RamosAlexCS) [David Ahn](https://github.com/dahn013) [Daniel Alcoff](https://github.com/ilkiyani)
+  
   This repository is updated and maintained by [Sean Yi](https://github.com/syi012) only
 
 ## Project Description
