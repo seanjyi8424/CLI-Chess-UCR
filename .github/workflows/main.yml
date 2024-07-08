@@ -1,4 +1,4 @@
-
+# Basic workflow for GitHub Actions
 name: CI
 
 # Controls when the workflow will run
@@ -36,14 +36,6 @@ jobs:
         cmake ..
         make
 
-    # - name: Build
-    # # Build your program with the given configuration
-    #   run: |
-    #     cmake .
-    #     make
-
     - name: Test
-      run: |
-        cd build
-        ./test
+      run: ./build/test
 
