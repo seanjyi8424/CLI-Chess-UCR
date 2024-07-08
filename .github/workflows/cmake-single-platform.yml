@@ -28,20 +28,22 @@ jobs:
     - name: Install dependencies
       run: git submodule update --init --recursive
 
-    # - name: Build
-    #   # Build your program with the given configuration
-    #   run: |
-    #     mkdir build
-    #     cd build
-    #     cmake ..
-    #     make
-
     - name: Build
-    # Build your program with the given configuration
+      # Build your program with the given configuration
       run: |
-        cmake .
+        mkdir build
+        cd build
+        cmake ..
         make
 
+    # - name: Build
+    # # Build your program with the given configuration
+    #   run: |
+    #     cmake .
+    #     make
+
     - name: Test
-      run: ./test
+      run: |
+        cd build
+        ./test
 
