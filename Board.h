@@ -17,6 +17,7 @@ public:
     Board(string);
     void menu();
     void printBoard();
+    bool gameEnd();
     // void updateBoard(); // I don't think this is needed because printBoard() should auto update //
     void populate(); //implement later after piece class//
     void move(int, int, int, int);

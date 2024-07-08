@@ -206,6 +206,10 @@ void Board::emptyBoard() {
 	}
 }
 
+bool Board::gameEnd() {
+	return gameOver;
+}
+
 void Board::printBoard() {
 	int y = 8;
 	cout << "[" << name << "]\n";

@@ -80,6 +80,12 @@ TEST(EmptySquare, null) {
     test->emptyBoard();
     delete test;
 }
+TEST(GameOver, false) {
+    Board* test = new Board("test");
+    ASSERT_EQ(test->gameEnd(), false);
+    test->emptyBoard();
+    delete test;
+}
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
