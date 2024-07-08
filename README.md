@@ -42,7 +42,7 @@
 
  ## Installation/Usage
   Execution
-  1. ``git submdule update --init --recursive``
+  1. ``git submodule update --init --recursive``
   2. ``cmake .``
   3. ``make``
   4. ``./play``
@@ -55,4 +55,6 @@
   * Quit ends the program/game.
  ## Testing
     We used the google test submodule to run our unit tests. We created a total of 9 tests composited into 5 test suites testing different squares. Each test tested different aspects of the square such as the type of piece that was on the square and the color associated on the square. 
+
+    To run google tests execute the test.exe file after completing installation.
  
